@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                echo "hello this world"
+                echo "hello this is my world"
             }
         }
     }
