@@ -15,4 +15,3 @@ pipeline {
         }
     }
 }
-Test4
