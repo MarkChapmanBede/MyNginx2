@@ -4,6 +4,7 @@ pipeline {
         stage('Checkout Code') {
             steps {
                 checkout scm
+                echo "hello world"
             }
         }
         stage('Deploy to Kubernetes') {
