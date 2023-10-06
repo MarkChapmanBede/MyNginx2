@@ -1,9 +1,20 @@
 pipeline {
     agent any
+    
     stages {
-        stage('Checkout Code') {
+        stage('Checkout') {
             steps {
-                echo "hello my world"
+                checkout scm
+            }
+        }
+
+        stage('Deploy to Kubernetes') {
+            steps {
+                script {
+                    // Apply the Kubernetes manifests
+                    sh "kubectl apply -f /var/lib/jenkins/workspace/MCKubes/nginx.yaml"
+                    sh "kubectl apply -f /var/lib/jenkins/workspace/MCKubes/ServiceLB.yaml"
+                }
             }
         }
     }
