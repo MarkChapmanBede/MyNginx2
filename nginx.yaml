@@ -1,12 +1,10 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: mccustom-nginx-pod
+  name: mynginxpod
   labels:
-    app: mccustom-nginx
+    app: mynginx
 spec:
   containers:
-  - name: mccustom-nginx-container
-    image: markdocker77/mccustom-nginx
-    ports:
-    - containerPort: 80
+  - name: mynginxcontainer
+    image: markdocker77/mccustom-nginx:latest
